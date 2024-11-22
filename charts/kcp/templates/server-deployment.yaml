@@ -86,6 +86,9 @@ spec:
         {{- include "common.labels" . | nindent 8 }}
         app.kubernetes.io/component: "server"
     spec:
+      {{- with .Values.kcp.priorityClassName }}
+      priorityClassName: {{ . }}
+      {{- end }}
       {{- with .Values.kcp.securityContext }}
       securityContext:
         {{- toYaml . | nindent 8 }}

@@ -33,6 +33,7 @@ etcd:
                   values:
                     - etcd
             topologyKey: "kubernetes.io/hostname"
+  priorityClassName: ""
 kcp:
   replicas: 1
   strategy:
@@ -103,6 +104,7 @@ kcp:
                   values:
                     - server
             topologyKey: "kubernetes.io/hostname"
+  priorityClassName: ""
 kcpFrontProxy:
   replicas: 1
   strategy:
@@ -204,6 +206,7 @@ kcpFrontProxy:
                   values:
                     - front-proxy
             topologyKey: "kubernetes.io/hostname"
+  priorityClassName: ""
 oidc:
   enabled: false
   caSecretName: ""

@@ -50,6 +50,9 @@ spec:
         {{- include "common.labels" . | nindent 8 }}
         app.kubernetes.io/component: "front-proxy"
     spec:
+      {{- with .Values.kcpFrontProxy.priorityClassName }}
+      priorityClassName: {{ . }}
+      {{- end }}
       {{- with .Values.kcpFrontProxy.securityContext }}
       securityContext:
         {{- toYaml . | nindent 8 }}
